@@ -2,9 +2,11 @@
 body {
     font-family: "Roman";
     line-height: 1.6;
-    margin: 2em;
+    margin: 2em auto; /* Keep the top and bottom margin as 2em and set left and right margin to auto */
     background-color: #f4f0e8;
+    max-width: 600px; /* Set your desired maximum width */
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     color: #333; /* Adjust color if needed */

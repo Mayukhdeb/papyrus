@@ -6,7 +6,9 @@ body {
     background-color: #f4f0e8;
     max-width: 600px; /* Set your desired maximum width */
 }
-
+.title {
+    text-align: center;
+}
 
 h1, h2, h3, h4, h5, h6 {
     color: #333; /* Adjust color if needed */

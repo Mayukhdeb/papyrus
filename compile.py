@@ -2,7 +2,7 @@ from papyrus.home import PapyrusHome, Post
 
 home = PapyrusHome(
     title="Papyrus",
-    body_markdown_filename="README.md",
+    body_markdown_filename="home.md",
     posts_folder="posts",
     posts=[
         Post(

@@ -1,18 +1,7 @@
 import os
 from uuid import uuid4
-from dataclasses import dataclass
 from typing import List
-
-
-def get_pandoc_command(
-    markdown_filename: str,
-    output_html_filename: str,
-    style_css_filename: str,
-    title: str,
-):
-    command = f"pandoc --standalone {markdown_filename} -o {output_html_filename} --css={style_css_filename} --metadata title='{title}'"
-    return command
-
+from .pandoc import get_pandoc_command
 
 class Post:
     def __init__(self, filename: str, slug: str, title: str):
@@ -28,7 +17,6 @@ class Post:
             title=self.title,
         )
         os.system(command=command)
-
 
 class PapyrusHome:
     def __init__(
@@ -84,6 +72,7 @@ class PapyrusHome:
         )
         os.system(command=command)
         os.system(f"rm {self.markdown_filename}")
+        self.compile_posts()
         print("Done!")
 
     def compile_posts(self):

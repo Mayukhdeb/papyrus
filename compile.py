@@ -8,7 +8,7 @@ home = PapyrusHome(
         Post(
             filename="src/sample.md",
             slug="sample",
-            title="This is a sample post"
+            title="This is a Sample Post"
         ),
         Post(
             filename="src/why-i-made-papyrus.md",

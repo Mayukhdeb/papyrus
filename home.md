@@ -8,3 +8,5 @@ sudo apt install pandoc
 ```bash
 python3 compile.py
 ```
+
+The `compile.py` script converts markdown files into html files and lists them down in the "posts" section seen below. The theme is taken from the `style.css` file.

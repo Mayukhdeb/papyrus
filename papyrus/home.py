@@ -29,6 +29,7 @@ class PapyrusHome:
         base_url: str = "posts",
         posts_folder: str = "posts",
     ) -> None:
+        assert os.path.exists(body_markdown_filename), f"Invalid body_markdown_filename: {body_markdown_filename}"
         self.title = title
         self.body_markdown_filename = body_markdown_filename
         self.posts = posts

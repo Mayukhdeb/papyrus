@@ -1,0 +1,3 @@
+In the last few years, I've used jekyll, hugo and sometimes plain html for my github pages websites. They were good, but it was always a pain to figure out the exact syntax for stuff like latex math etc. Plus the themes were not very customizable. Therefore I decided to take matters into my own hands and build a tiny framework which is "just enough" for my own needs.
+
+**tl;dr**: I was tired of using the existing static site builders. Plus I was bored :)

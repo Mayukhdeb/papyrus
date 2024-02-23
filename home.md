@@ -6,7 +6,34 @@ sudo apt install pandoc
 ```
 
 ```bash
-python3 compile.py
+pip install git+https://github.com/Mayukhdeb/papyrus.git
 ```
 
-The `compile.py` script converts markdown files into html files and lists them down in the "posts" section seen below. The theme is taken from the `style.css` file.
+Example usage:
+
+```python
+rom papyrus.home import PapyrusHome, Post
+
+home = PapyrusHome(
+    title="Papyrus",
+    body_markdown_filename="home.md",  # homepage markdown file
+    posts_folder="posts",  # this is where the html file for each Post gets saved
+    posts=[
+        Post(
+            filename="src/sample.md",
+            slug="sample",
+            title="This is a Sample Post"
+        ),
+        Post(
+            filename="src/why-i-made-papyrus.md",
+            slug="why-i-made-papyrus",
+            title="Why I made Papyrus"
+        )
+    ]
+)
+
+## generate the homepage and all the posts
+home.compile(output_html_filename="index.html")
+```
+
+The script converts markdown files into html files and lists them down in the "posts" section as seen below:

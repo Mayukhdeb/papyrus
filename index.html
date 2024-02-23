@@ -84,12 +84,30 @@
 <p><a href="https://github.com/Mayukhdeb/papyrus">Papyrus</a> is a simple markdown to webpage generator. It is ideal for someone who wants to just get to writing instead of having to fight with jekyll/hugo errors.</p>
 <p>Install <a href="https://pandoc.org/installing.html">pandoc</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">sudo</span> apt install pandoc</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">python3</span> compile.py</span></code></pre></div>
-<p>The <code>compile.py</code> script converts markdown files into html files and lists them down in the “posts” section seen below. The theme is taken from the <code>style.css</code> file.</p>
-<h2 id="posts">Posts</h2>
-<ul>
-<li><a href="posts/sample.html">This is a Sample Post</a></li>
-<li><a href="posts/why-i-made-papyrus.html">Why I made Papyrus</a></li>
-</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">pip</span> install git+https://github.com/Mayukhdeb/papyrus.git</span></code></pre></div>
+<p>Example usage:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>rom papyrus.home <span class="im">import</span> PapyrusHome, Post</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>home <span class="op">=</span> PapyrusHome(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    title<span class="op">=</span><span class="st">&quot;Papyrus&quot;</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    body_markdown_filename<span class="op">=</span><span class="st">&quot;home.md&quot;</span>,  <span class="co"># homepage markdown file</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    posts_folder<span class="op">=</span><span class="st">&quot;posts&quot;</span>,  <span class="co"># this is where the html file for each Post gets saved</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    posts<span class="op">=</span>[</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        Post(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>            filename<span class="op">=</span><span class="st">&quot;src/sample.md&quot;</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>            slug<span class="op">=</span><span class="st">&quot;sample&quot;</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>            title<span class="op">=</span><span class="st">&quot;This is a Sample Post&quot;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>        ),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>        Post(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>            filename<span class="op">=</span><span class="st">&quot;src/why-i-made-papyrus.md&quot;</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>            slug<span class="op">=</span><span class="st">&quot;why-i-made-papyrus&quot;</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>            title<span class="op">=</span><span class="st">&quot;Why I made Papyrus&quot;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>        )</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>    ]</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a><span class="co">## generate the homepage and all the posts</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a>home.<span class="bu">compile</span>(output_html_filename<span class="op">=</span><span class="st">&quot;index.html&quot;</span>)</span></code></pre></div>
+<p>The script converts markdown files into html files and lists them down in the “posts” section as seen below: ## Posts - <a href="posts/sample.html">This is a Sample Post</a> - <a href="posts/why-i-made-papyrus.html">Why I made Papyrus</a></p>
 </body>
 </html>

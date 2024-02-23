@@ -10,5 +10,9 @@ sudo apt install pandoc
 ```
 
 ```bash
+pip install git+https://github.com/Mayukhdeb/papyrus.git
+```
+
+```bash
 python3 compile.py
 ```

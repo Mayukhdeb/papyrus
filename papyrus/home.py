@@ -1,6 +1,7 @@
 import os
 from uuid import uuid4
 from typing import List
+from .style_css import StyleCSS
 from .pandoc import get_pandoc_command
 
 class Post:
@@ -28,13 +29,21 @@ class PapyrusHome:
         cache_dir: str = ".papyrus",
         base_url: str = "posts",
         posts_folder: str = "posts",
+        style_css_filename = "style.css"
     ) -> None:
         assert os.path.exists(body_markdown_filename), f"Invalid body_markdown_filename: {body_markdown_filename}"
         self.title = title
         self.body_markdown_filename = body_markdown_filename
         self.posts = posts
         self.validate_posts()
-        self.style_css_filename = "style.css"
+
+        if not os.path.exists(style_css_filename):
+            print(f"Saving css file: {style_css_filename}")
+            css = StyleCSS()
+            css.save(style_css_filename)
+            self.style_css_filename=style_css_filename
+
+        self.style_css_filename = style_css_filename
         self.cache_dir = cache_dir
         self.base_url = base_url
         self.posts_folder = posts_folder

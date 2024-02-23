@@ -12,7 +12,7 @@ pip install git+https://github.com/Mayukhdeb/papyrus.git
 Example usage:
 
 ```python
-rom papyrus.home import PapyrusHome, Post
+from papyrus.home import PapyrusHome, Post
 
 home = PapyrusHome(
     title="Papyrus",

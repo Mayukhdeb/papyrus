@@ -58,6 +58,6 @@ class StyleCSS:
     }}
     """
 
-def save(self, filename: str):
-    with open(filename, "w") as file:
-            file.write(self.css)
+    def save(self, filename: str):
+        with open(filename, "w") as file:
+                file.write(self.css)
